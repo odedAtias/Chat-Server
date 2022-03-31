@@ -1,11 +1,11 @@
-# Expanding-Cards
+#Expanding-Cards
 implement an simple event-driven chat server, the program combines work with a variety of TCP features such as:
 
 🔹 select function (In order to save on the use of a thread pool for clients)
 
 🔹 sockets
 
-## Technologies
+##Technologies
 👉 C programming language
 
 ## Supported operating systems
@@ -13,7 +13,7 @@ implement an simple event-driven chat server, the program combines work with a v
 
 💻 Unix
  
-## Implementation Remarks
+##Implementation Remarks
 
 🔸 I have added to the program 3 structures that will help me perform the task in a simpler way:
 
