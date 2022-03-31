@@ -1,5 +1,5 @@
-
-
+//Chat Server implementation under Linux
+//Written by Oded Atias
 
 /** The libraries I used **/
 #include <stdio.h>
@@ -172,7 +172,7 @@ int write_to_client(int sd, conn_pool_t *pool) {
 
 /** Auxiliary functions implementation block  **/
 void input_test(int argc, char *argv[]) {
-    //this is what tamar-bash the lecturer said
+    //(1024,9999) is the range of ports required for communication under TCP protocol
     if (argc != 2 || strtol(argv[1], NULL, 10) < 1024 || strtol(argv[1], NULL, 10) > 9999) {
         printf("Usage : chatServer <port>\n");
         exit(EXIT_SUCCESS);
