@@ -1,0 +1,40 @@
+Author id: 207904418
+
+==Personal details==
+Name : Oded Atias
+id : 207904418
+
+==Exercise name== 
+chatServer - implement an event-driven chat server.
+
+==Submitted files==
+chatServer.c - A file that contains all the functions of the chat server implementation and the main function.
+README - Program readme file.
+
+==Remarks==
+I have added to the program 3 auxiliary methods that will help me perform the task in a simpler way Auxiliary functions for performing the task:
+
+1) void input_test - Before running the program we will check if the input of the program was indeed transmitted as required.
+2) int create_welcome_socket - create welcome socket,additionally set that all sockets that are created from this welcome socket will be non-blocking.
+3) int create_client_socket create socket to the client.
+4) void intHandler - Once the program receives a SIGINT signal it will simply exit the loop where the chat is running.
+5) int init_pool - Init the conn_pool_t structure.
+6) int add_conn - Add connection when new client connects the server. 
+7) int remove_conn - Remove connection when a client closes connection, or clean memory if server stops.
+8) int add_msg - Add msg to the queues of all connections (except of the origin).
+9) int write_to_client - Write msg to client.
+
+I would like to describe the way in which I implemented the work in the main function:
+
+The program receives one parameter which is the port on which the communication will be performed, if the input is correct, proceed with the program.
+we then create the socket which will perform the 3-way handshake between all the sockets that are interested in connecting to the chat.
+We then work under a loop which we will not exit as long as the user does not exit the program (press ctrl-c),
+In each loop loop we will check with the select function if a particular event occurred in one of the sockets, if it happens we will check if an event of reading or writing occurred and thus act according to the case.
+The structures between which the communication takes place are of the conn_t type, we will manage a pool of such structures, where each such structure will have its own socket for communication with the server,
+ and a file descriptor with which the select function will be able to synchronize with all structures in chat.
+
+Assumptions I made in the program: 
+
+1) We will listen to the ports only within the range of values ​​1024 to 10000, So that in any other input that the program receives we will emit a usage message, The assumption is based on a conversation with lecturer Tamar Bash.
+2) I added include to the sys / types.h directory in the header file because the file without the include did not compile.
+3) I assumed that the number of sockets that can wait in line for an answer as to what the welcome socket is is 5 previous exercises and statements of the lecturer in the lecture as long as no other instruction is written in the program.
