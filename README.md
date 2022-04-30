@@ -6,7 +6,7 @@ implement an simple event-driven chat server, the program combines work with a v
 🔹 sockets
 
 ## Technologies
-👉 C programming language
+👉 C 
 
 ## Supported operating systems
 💻 Linux
@@ -15,7 +15,7 @@ implement an simple event-driven chat server, the program combines work with a v
  
 ## Implementation Remarks
 
-🔸 I have added to the program 3 structures that will help me perform the task in a simpler way:
+1️⃣ I have added to the program 3 structures that will help me perform the task in a simpler way:
 
  1) conn_pool_t - Data structure to keep track of active client connections.
 
@@ -23,7 +23,7 @@ implement an simple event-driven chat server, the program combines work with a v
 
  3) conn_t - Data structure to keep track of client connection state.
 
-🔸 I have added to the program 5 main methodes that will help me perform the task in a simpler way:
+2️⃣ I have added to the program 5 main methodes that will help me perform the task in a simpler way:
 
  1) int init_pool - Init the conn_pool_t structure.
 
@@ -35,7 +35,7 @@ implement an simple event-driven chat server, the program combines work with a v
 
  5) int write_to_client - Write msg to client.
 
-🔸 I have added to the program 9 auxiliary methods that will help me perform the task in a simpler way:
+3️⃣ I have added to the program 9 auxiliary methods that will help me perform the task in a simpler way:
 
  1) void input_test - Before running the program we will check if the input of the program was indeed transmitted as required.
 
@@ -55,9 +55,9 @@ implement an simple event-driven chat server, the program combines work with a v
 
  9) int write_to_client - Write msg to client.
 
-🔸 We will listen to the ports only within the range 1024-10000, this is the range of ports that are commonly used to communicate under 'TCP' protocol.
+4️⃣ We will listen to the ports only within the range 1024-10000, this is the range of ports that are commonly used to communicate under 'TCP' protocol.
 
-🔸 It is usually customary to set that they can wait in line for the service so welcome socket no more than 5 clients.
+5️⃣ It is usually customary to set that they can wait in line for the service so welcome socket no more than 5 clients.
 
 ## how to run
 
